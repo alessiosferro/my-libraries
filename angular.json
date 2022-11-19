@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "@alessiosferro/ng-datepicker": {
+      "projectType": "library",
+      "root": "projects/alessiosferro/ng-datepicker",
+      "sourceRoot": "projects/alessiosferro/ng-datepicker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/alessiosferro/ng-datepicker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/alessiosferro/ng-datepicker/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/alessiosferro/ng-datepicker/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/alessiosferro/ng-datepicker/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "289f58e9-480f-4f7f-bffb-e671fbcb279d"
   }
 }
